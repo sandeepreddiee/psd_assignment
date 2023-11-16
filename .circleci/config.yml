@@ -5,16 +5,21 @@ jobs:
       - image: cimg/python:3.11.5
     steps:
       - checkout
-      - run: pip install -r requirements.txt # In this file I am keeping all the dependencies required (numpy, scipy ..)
-      - run: pytest test_sparse_recommender.py
-
+      - run: 
+          name: Install the Dependencies
+          command: |
+            pip install -r requirements.txt # In this file I am keeping all the dependencies required (numpy, scipy ..)
+      - run: 
+          name: Testing the Test cases
+          command: |
+            pytest test_sparse_recommender.py
   build_docker_image:
     docker:
       - image: cimg/python:3.11.5
     steps:
       - checkout
       - setup_remote_docker
-      - run:
+      - run: 
           name: Build Docker image
           command: |
             docker build -t sandeepreddiee/psd-docker-assignment:latest .
