@@ -21,7 +21,7 @@ jobs:
       - run:
           name: Push to Docker Hub
           command: |
-            echo "$sandeep1" | docker login -u "$sandeep" --password-stdin
+            echo sandeep1 | docker login -u sandeep --password-stdin
             docker push sandeepreddiee/psd-docker-assignment:latest
 
 workflows:
