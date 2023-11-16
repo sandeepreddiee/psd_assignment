@@ -17,12 +17,12 @@ jobs:
       - run: 
           name: Build Docker image
           command: |
-            docker build -t sandeepreddiee/psd-docker-assignment:latest .
+            docker build -t $DOCKERHUB_USERNAME/psd-docker-assignment:latest .
       - run:
           name: Push to Docker Hub
           command: |
             echo $DOCKERHUB_PASS | docker login -u $DOCKERHUB_USERNAME --password-stdin
-            docker push sandeepreddiee/psd-docker-assignment:latest
+            docker push $DOCKERHUB_USERNAME/psd-docker-assignment:latest
 
 workflows:
   version: 2
