@@ -11,7 +11,7 @@ jobs:
           command: |
             pip install -r requirements.txt # In this file I am keeping all the dependencies required (numpy, scipy ..)
       - run: 
-          name: Testing the Test cases
+          name: Running the Test cases
           command: |
             pytest test_sparse_recommender.py
       - run: 
