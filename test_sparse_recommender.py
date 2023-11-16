@@ -17,9 +17,9 @@ def test_set_get():
 
 # Test converting SparseMatrix to dense matrix
 def test_to_dense():
-    sparse_matrix = SparseMatrix([[0, 1, 0], [0, 1, 0], [0, 0, 8], [0, 0, 0]], 6, 3)
+    sparse_matrix = SparseMatrix([[0, 1, 0], [0, 1, 0], [0, 0, 8], [0, 0, 0]], 4, 3)
     dense_matrix = sparse_matrix.to_dense()
-    expected_dense_matrix = np.array([[0, 0, 0], [0, 1, 0], [0, 0, 9], [0, 6, 0]])
+    expected_dense_matrix = np.array([[0, 1, 0], [0, 1, 0], [0, 0, 8], [0, 0, 0]])
     assert np.array_equal(dense_matrix, expected_dense_matrix)
 
 # Test for invalid key when getting a value
